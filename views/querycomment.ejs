@@ -1,0 +1,64 @@
+<%-layout('layout/boilerplate')%>
+
+<div class="toplayer" style="margin-top: 0.5cm;">
+    <img src="/image/logo.png" width="150">
+    <br><br>
+</div>
+
+<div class="container-fluid containerdiscussion">
+    <div class="row">
+      <div class="col">
+        <div class="disuser">
+          <img src="/image/disuser.png" width="60" class="disuser">
+        </div>
+        <div class="dishead">
+         <h5 style="display: inline-block;"><%=ques.userdetail.name%> , </h5>
+         <h6 class="mb-2 text-muted" style="display: inline-block;"><%=ques.userdetail.branch %></h6>
+         <h6 class="mb-2 text-muted" style="display: inline-block;">  <%=ques.userdetail.college %></h6>
+        </div>
+      </div>
+    </div>    
+    <div class="row">
+      <div class="col">
+        <div class="disque">
+          <p ><%=ques.question%></p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="bedis">
+          <a href="" style="display: inline-block;"><img src="/image/upvote.png" width="30"></a>
+          <p style="display: inline-block;"><%=ques.likes%></p>
+          <a href="" style="display: inline-block; margin-left: 1cm;"><img src="/image/comment.png" width="30"></a>
+          <p style="display: inline-block;"><%=ques.answers.length%></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class=" container-fluid queryco">
+<div class="answertemp">
+    <form action="/comment/<%=ques._id%>" method="POST">
+    <label for="ans" class="title1">Have answer?</label>
+    <textarea class="form-control" id="ques" rows="3" placeholder="Write your answer here" name="ans" required style="border-radius: 1cm; padding-left:1cm;"></textarea>
+    <button type="submit" class="btn btn-primary mt-2 mb-2">Answer</button>
+    </form>
+</div>
+
+<%for(let an of ques.answers){%>
+    <div class="card commented">
+        <div class="card-body">
+            <h5 class="card-title" style="font-weight:bolder"><%=an.userdata.name%></h5>
+            <p class="card-text"><%=an.ans%></p>
+            <%if(an.userdata.id==currentuser._id){%>
+                <div class="disbtn">
+                  <a href="/comment/<%=ques._id%>/answer/delete/<%=an.id%>"><button type="button" class="btn btn-outline-danger">Delete</button></a>
+                </div>
+            <%}%>
+        </div>
+      </div>
+<%}%>
+
+</div>

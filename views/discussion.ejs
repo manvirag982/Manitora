@@ -1,0 +1,48 @@
+<%-layout('layout/boilerplate')%>
+
+<!-- <div class="toplayer" style="margin-top: 0.5cm;">
+    <img src="/image/logo.png" width="150">
+    <br>
+    <br>
+</div>   -->
+<%for(let que of queries){%>
+      <div class="container-fluid containerdiscussion">
+        <div class="row">
+          <div class="col">
+            <div class="disuser">
+              <img src="image/disuser.png" width="60" class="disuser">
+            </div>
+             <div class="dishead">
+             <h5 style="display: inline-block;"><%=que.userdetail.name%> , </h5>
+             <h6 class="mb-2 text-muted" style="display: inline-block;"><%=que.userdetail.branch %></h6>
+             <h6 class="mb-2 text-muted" style="display: inline-block;">  <%=que.userdetail.college %></h6>
+            </div>
+          </div>
+        </div>    
+        <div class="row">
+          <div class="col">
+            <div class="disque">
+              <p ><%=que.question%></p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="bedis">
+              <a href="/like/<%=que._id%>" style="display: inline-block;"><img src="image/upvote.png" width="30"></a>
+              <p style="display: inline-block;"><%=que.likes%></p>
+              <a href="/comment/<%=que._id%>" style="display: inline-block; margin-left: 1cm;"><img src="image/comment.png" width="30"></a>
+              <p style="display: inline-block;"><%=que.answers.length%></p>
+              <%if(que.userdetail.id==currentuser._id){%>
+              <div class="disbtn">
+              <a href="/discussion/<%=que._id%>"><button type="button" class="btn btn-outline-danger">Delete</button></a>
+              </div>
+              <%}%>
+            </div>
+          </div>
+        </div>
+      </div>
+<%}%>
+
+
+

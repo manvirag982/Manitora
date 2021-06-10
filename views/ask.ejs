@@ -1,0 +1,33 @@
+<!-- <%-layout('layout/boilerplate')%>
+
+<div class="toplayer" style="margin-top: 0.5cm;">
+    <img src="/image/logo.png" width="150">
+    <h1>MANITora</h1>
+</div>
+
+<div>
+    <form action="/discussion" method="POST">
+    <label for="ques">Ask your question:</label>
+    <textarea class="form-control" id="ques" rows="3" placeholder="Write your question" name="question" required></textarea>
+    <button type="submit" class="btn btn-primary">Ask</button>
+    </form> -->
+<!-- </div> -->
+
+<%-layout('layout/boilerplate')%>
+<div class="toplayer" style="margin-top: 0.5cm;">
+    <img src="image/logo.png" width="150">
+    <br><br>
+    <!-- <h1 class="title1">Manitora</h1> -->
+</div> 
+<div class="container-md">
+        <h1 class="title1">Ask Query !</h1>
+        <br>
+        <form action="/discussion" method="POST">
+                 <div class="mb-3">
+                 <textarea class="form-control" name="question" placeholder="Write Your Question Here!" required="required" rows="4"></textarea>
+                 </div>
+                <button type="submit" class="btn btnm btn-outline-primary" style="max-width:6cm;">Submit</button>
+                
+        </form>
+</div> 
+

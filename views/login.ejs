@@ -1,0 +1,22 @@
+<%-layout('layout/boilerplate')%>
+
+<div class="toplayer" style="margin-top: 0.5cm;">
+    <img src="image/logo.png" width="150">
+    <br><br>
+    <!-- <h1 class="title1">Manitora</h1> -->
+    <div class="container-sm containerlogin">
+        <h1 class="title1">Login</h1>
+        <br>
+        <form action="/login" method="post">
+                 <div class="mb-3">
+                <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+                 </div>
+                 <div class="mb-3">
+                <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+                </div>
+                <button type="submit" class="btn btnm btn-outline-primary" style="max-width:6cm;">Login</button>
+                
+        </form>
+    </div> 
+</div> 
+

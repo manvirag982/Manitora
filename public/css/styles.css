@@ -1,0 +1,117 @@
+.toplayer{
+    display: block;
+    text-align: center;
+    margin-top: 2cm;
+}
+.lsform{
+    width: 13cm;
+    text-align: center;
+}
+
+.title{
+      font-size:2cm;  
+      color:white;
+      font-weight:900;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.btnm{
+    width: 5cm;
+}
+.navbar{
+    background-color: rgba(0, 0, 0, 0);
+}
+.logo{
+    padding-top: auto;
+    font-size: 1cm;
+    font-weight: 500;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.logsi{
+    margin-right:0cm;
+}
+.title1{
+    font-size:1cm;  
+    color:white;
+    font-weight:900;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    /* background-color: black; */
+    background: linear-gradient(to right, #b92b27, #1565c0)
+}
+
+.cardlogin{
+    width: 6cm;
+    margin:auto;
+    background-color: transparent;
+}
+
+.containerlogin{
+    max-width: 12cm;
+
+}
+
+.asklayer{
+    display: block;
+    text-align: l;
+    margin-top: 2cm;
+}
+
+.containerdiscussion{
+    background-color:white;
+    border-radius: 1cm;
+    margin-top: .5cm;
+    padding-left: 1cm;
+    max-width: 30cm;
+    
+}
+
+
+.disuser{
+    margin-top: .3cm;
+    display: inline;
+    
+}
+.dishead{
+    margin-top: 3cm;
+    padding-top: 1cm;
+    margin-left: .1cm;
+    display: inline;
+}
+.disque{
+    margin-left: 0.5cm;
+    margin-top: .5cm;
+    font-size: .8cm;
+}
+.bedis{
+
+    margin-top: .5cm;
+    margin-bottom: .5cm;
+    margin-left: 1cm;
+
+}
+.answertemp{
+    margin-left: 3cm;
+    margin-right: .5cm;
+    max-width: 30cm;
+ 
+}
+.commented{
+    margin-left: 3cm;
+    margin-right: .5cm;
+    margin-bottom: 2cm;
+    border-radius: 1cm;
+    max-width: 30cm;
+}
+.queryco{
+    max-width: 30cm;
+}
+.disbtn{
+    float: right;
+    margin-right: 1cm;
+}
