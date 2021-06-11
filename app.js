@@ -1,3 +1,6 @@
+if(process.env.NODE_ENV !== "production"){
+    require('dotenv').config();
+}
 const express=require('express');
 const ejs=require('ejs');
 const ejsmate=require('ejs-mate');
@@ -10,19 +13,36 @@ const Answer= require("./models/answer");
 const mongoose=require('mongoose');
 const passport = require('passport');
 const passportLocalMongoose   = require("passport-local-mongoose");
+// const { session } = require('passport');
+const session=require('express-session');
+const MongoStore = require('connect-mongo');
+
 
 
 // const query=require('./models/query');
 // const answer=require('./models/answer');
+// const store=new MongoStore({
+//    url:'mongodb://localhost:27017/my_manitora',
+//    secret:'secret',
+//    touchAfter: 24*60*60
 
-
-const expressSession = require('express-session')({
-    secret: 'secret',
+// });
+// store.on("error",function(e){
+//     console.log("SESSION STORE ERROR");
+// })
+const secret='secrethaimero' || process.env.SECRET;
+const expressSession = session({
+    secret,
+    store:MongoStore.create({
+        mongoUrl:'mongodb://localhost:27017/my_manitora',
+        touchAfter:24*60*60
+    }),
     resave: false,
     saveUninitialized: true
 });
 app.use(expressSession);
-mongoose.connect('mongodb://localhost:27017/my_manitora', {
+const dburl=process.env.DB_ur || 'mongodb://localhost:27017/my_manitora';
+mongoose.connect(dburl, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
@@ -30,6 +50,7 @@ mongoose.connect('mongodb://localhost:27017/my_manitora', {
 });
 
 app.use(passport.initialize());
+// we need to use this other wise we will not be able to login because session remember the login detial with session id`
 app.use(passport.session());
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
